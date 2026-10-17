@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B6E6E">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="AquaVibes">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEFElEQVR4nO3dMVLbUBRGYSWTIjNhGbRU2Rd9VpDVpaJlGRQpU3hG4xE+oFh67/56Ol+XFNj3+uQhZAhffjw/T9ItX6ufgHIZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBnHsN6eXjd+BOMY0/Yypmn6tv1DRLl7KQ8vj/s+k0K7lDEdPY69tnDzQx0xlx0XMh0xjn3nX/lAhwhl980cI45uQax5ApmhtFhRdBzlTdw0P6ucShotKjSOzCwWLk+yNpGmi8qK4xBNLBQeJK3XlRLHEbNY6HyQdNhYxE2wAcqY9Zmlz6MUnxwjZTFreoT03FjlyTFkGbMW03XeWM3JMXYWs32PkP5LKzg5TlLGbJd5S5bWO46zlXGxZeq3p9eqpXWN45xlXNw3e+3G+sVx5jIu/ncD5RvrFEf5nCHW7yFhYz3iSJgzx6fbKLzIWGgeR8icUT7YSdS62sYRNWqUm5tJW1fKG28L33/9uf7j398/q55JN2llTE1PjrunXZRx828GMO8n5yJjIeJd2WvUwZB9TJEHxqxVHPfN/HEB4/WRXMYUdXKsee3H6yNZUBxK0ySO8NNSK3lyCBmHUFAca+50neFuWI6gOKbPXnvL6CwrjokLsIz+4uKYbnVgGSVC33izhgSJJ4dCNIkj5/8m0BaeHELGIdQqDj+zrBG+JU+OYsl9NIwjeewE834eXh4zd+XJkSKwj7ZxBA4c4uZm0tbV/ORIGzjBBzuJWlePTytRA5f7dBs5lyCdrjlCpi23fg8JG+t3QZowba3/3UD5xrp+tVI+baH7Zq/dWO8vZc/Zx5apCy9BCu5znK2PXeYtWVrNTbCcC/Km9h2z/8Yq75CO3UeL6TpvrPjbBC/TDvYTck1fwp4bi3hvZaQjpM8sfR4lIo5piKuQziN0eKys7z6fBz7QJ5rCph9eHk/0m5pmh7gWSTjqmi4qNI6LzIMkoYmFRkdIdByz69ejJJTAIBZa9HGMOK51CyU/iIXd+zheHNfev34n/132+16CHDuO98Z4jTfa6whJuc+hfe3yj8Q4hrW9D+MQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg6hfzuUIzWn6Qx7AAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEFElEQVR4nO3dMVLbUBRGYSWTIjNhGbRU2Rd9VpDVpaJlGRQpU3hG4xE+oFh67/56Ol+XFNj3+uQhZAhffjw/T9ItX6ufgHIZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBmHkHEIGYeQcQgZh5BxCBnHsN6eXjd+BOMY0/Yypmn6tv1DRLl7KQ8vj/s+k0K7lDEdPY69tnDzQx0xlx0XMh0xjn3nX/lAhwhl980cI45uQax5ApmhtFhRdBzlTdw0P6ucShotKjSOzCwWLk+yNpGmi8qK4xBNLBQeJK3XlRLHEbNY6HyQdNhYxE2wAcqY9Zmlz6MUnxwjZTFreoT03FjlyTFkGbMW03XeWM3JMXYWs32PkP5LKzg5TlLGbJd5S5bWO46zlXGxZeq3p9eqpXWN45xlXNw3e+3G+sVx5jIu/ncD5RvrFEf5nCHW7yFhYz3iSJgzx6fbKLzIWGgeR8icUT7YSdS62sYRNWqUm5tJW1fKG28L33/9uf7j398/q55JN2llTE1PjrunXZRx828GMO8n5yJjIeJd2WvUwZB9TJEHxqxVHPfN/HEB4/WRXMYUdXKsee3H6yNZUBxK0ySO8NNSK3lyCBmHUFAca+50neFuWI6gOKbPXnvL6CwrjokLsIz+4uKYbnVgGSVC33izhgSJJ4dCNIkj5/8m0BaeHELGIdQqDj+zrBG+JU+OYsl9NIwjeewE834eXh4zd+XJkSKwj7ZxBA4c4uZm0tbV/ORIGzjBBzuJWlePTytRA5f7dBs5lyCdrjlCpi23fg8JG+t3QZowba3/3UD5xrp+tVI+baH7Zq/dWO8vZc/Zx5apCy9BCu5znK2PXeYtWVrNTbCcC/Km9h2z/8Yq75CO3UeL6TpvrPjbBC/TDvYTck1fwp4bi3hvZaQjpM8sfR4lIo5piKuQziN0eKys7z6fBz7QJ5rCph9eHk/0m5pmh7gWSTjqmi4qNI6LzIMkoYmFRkdIdByz69ejJJTAIBZa9HGMOK51CyU/iIXd+zheHNfev34n/132+16CHDuO98Z4jTfa6whJuc+hfe3yj8Q4hrW9D+MQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg4h4xAyDiHjEDIOIeMQMg6hfzuUIzWn6Qx7AAAAAElFTkSuQmCC">
+<style>html{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>AquaVibes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: satu kolom ala aplikasi HP. Dua tab (Ide, Naskah) dan satu layar baca penuh untuk teleprompter. */
+:root{
+  --bg:#EDF3F1; --surface:#F8FBFA; --fg:#10292C; --muted:#4E6A6B; --line:#CBDAD7;
+  --accent:#0B6E6E; --on-accent:#FFFFFF;
+  --molly:#A84B07; --louhan:#B01F38; --umum:#0B6E6E;
+  --rd-bg:#071417; --rd-fg:#F2F7F5; --rd-dim:#8DA9A9; --rd-band:#14313A; --rd-accent:#FF9B4A; --rd-on:#1B0E02; --rd-veil:#071417E6;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1A1D; --surface:#102529; --fg:#E4EFEC; --muted:#93AEAD; --line:#21393C;
+    --accent:#5FD3C8; --on-accent:#05211F;
+    --molly:#FFA259; --louhan:#FF7C8D; --umum:#5FD3C8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1A1D; --surface:#102529; --fg:#E4EFEC; --muted:#93AEAD; --line:#21393C;
+  --accent:#5FD3C8; --on-accent:#05211F;
+  --molly:#FFA259; --louhan:#FF7C8D; --umum:#5FD3C8;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--fg); font:400 1rem/1.5 var(--body);
+  padding-block:20px 56px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:40rem;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+header{display:flex;flex-direction:column;gap:6px}
+h1{font:800 clamp(2rem,9vw,2.75rem)/1 var(--display);letter-spacing:-.025em;margin:0;text-wrap:balance}
+.sub{margin:0;color:var(--muted);max-width:34ch}
+h2{font:600 1.125rem/1.2 var(--display);margin:0;text-wrap:balance}
+.label{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+.btn{font-weight:600;font-size:.9375rem;line-height:1;padding:.8rem 1.1rem;min-height:44px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.sm{min-height:36px;padding:.5rem .75rem;font-size:.8125rem}
+.btn.warn{border-color:var(--louhan);color:var(--louhan);background:transparent}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.tab{padding:.75rem;font-weight:600;background:transparent;border:0;color:var(--muted);min-height:44px}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg)}
+.pane{display:flex;flex-direction:column;gap:20px}
+
+.pick{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.pick .ttl{font:800 1.4rem/1.15 var(--display);letter-spacing:-.01em;margin:0;text-wrap:balance}
+.pick .hook{margin:0;color:var(--muted)}
+.chip{display:inline-block;font:500 .6875rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:.35rem .55rem;border:1px solid currentColor;border-radius:999px;white-space:nowrap}
+.sp-molly{color:var(--molly)} .sp-louhan{color:var(--louhan)} .sp-umum{color:var(--umum)}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.fchip{padding:.5rem .9rem;min-height:40px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);font-weight:500;font-size:.875rem}
+.fchip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.ideas{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.ideas>li{border-top:1px solid var(--line)}
+summary{list-style:none;position:relative;padding:14px 32px 14px 0;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-width:0}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font:500 1.25rem/1 var(--mono);color:var(--muted)}
+details[open]>summary::after{content:"\2013"}
+.it-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.it-title{font:600 1.0625rem/1.25 var(--display);min-width:0;overflow-wrap:anywhere}
+.it-hook{color:var(--muted);font-size:.9375rem;margin:0;overflow-wrap:anywhere}
+.it-body{padding:0 0 16px;display:flex;flex-direction:column;gap:12px}
+.script{white-space:pre-wrap;margin:0;font:400 .9375rem/1.55 var(--body);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-wrap:anywhere}
+
+.formula{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.bar{display:flex;height:14px;gap:2px}
+.bar i{display:block;border-radius:2px}
+.legend{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:.9375rem}
+.legend b{color:var(--fg);font-weight:600}
+
+.edhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px}
+.count{font:500 .75rem/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.field{display:flex;flex-direction:column;gap:6px}
+.input{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;padding:.75rem;font-size:1rem}
+textarea.input{min-height:18rem;resize:vertical;line-height:1.55}
+.hint{margin:0;color:var(--muted);font-size:.8125rem}
+.status{min-height:1.25rem;margin:0;font-size:.875rem;color:var(--accent);font-weight:600}
+.saved{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.saved li{border-top:1px solid var(--line);padding:12px 0;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.saved .sv-info{min-width:0;flex:1 1 12rem;display:flex;flex-direction:column;gap:2px}
+.saved .sv-title{font-weight:600;overflow-wrap:anywhere}
+.empty{color:var(--muted);margin:0;padding:12px 0;border-top:1px solid var(--line)}
+
+/* Layar baca teleprompter */
+.reader{position:fixed;inset:0;z-index:20;background:var(--rd-bg);color:var(--rd-fg);display:flex;flex-direction:column}
+.rd-top{flex:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:calc(env(safe-area-inset-top,0px) + 8px) max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.rd-top .t{font:500 .75rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--rd-dim);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rd-close{border:1px solid var(--rd-band);background:transparent;color:var(--rd-fg);border-radius:10px;padding:.5rem .9rem;min-height:40px;font-weight:600}
+.rd-wrap{position:relative;flex:1;min-height:0}
+.rd-band{position:absolute;left:0;right:0;top:40%;height:var(--lh);background:var(--rd-band);pointer-events:none;border-left:4px solid var(--rd-accent)}
+.rd-scroll{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.rd-text{font:600 var(--fs)/1.45 var(--body);max-width:44rem;margin:0 auto;position:relative}
+.rd-text p{margin:0 0 .9em;white-space:pre-wrap;overflow-wrap:anywhere}
+.rd-text.mirror{transform:scaleX(-1)}
+.cue{font:500 .6em/1 var(--mono);letter-spacing:.02em;color:var(--rd-accent)}
+.rd-count{position:absolute;inset:0;display:grid;place-items:center;background:var(--rd-veil);font:800 8rem/1 var(--display);color:var(--rd-accent);font-variant-numeric:tabular-nums}
+.rd-ctl{flex:none;background:var(--rd-bg);border-top:1px solid var(--rd-band);display:flex;flex-direction:column;gap:12px;
+  padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.rd-prog{height:4px;background:var(--rd-band);border-radius:2px;overflow:hidden}
+.rd-prog div{height:100%;width:0;background:var(--rd-accent)}
+.rd-row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.rd-play{min-width:7rem;min-height:48px;border:0;border-radius:10px;background:var(--rd-accent);color:var(--rd-on);font-weight:800;font-size:1.0625rem}
+.rd-row label{flex:1 1 9rem;display:flex;flex-direction:column;gap:4px;font:500 .75rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--rd-dim);min-width:0}
+.rd-row output{color:var(--rd-fg);font-variant-numeric:tabular-nums}
+.rd-row input[type=range]{width:100%;accent-color:var(--rd-accent);min-height:28px;margin:0}
+.rd-row label.chk{flex:0 0 auto;flex-direction:row;align-items:center;gap:8px;min-height:44px}
+.rd-row input[type=checkbox]{width:20px;height:20px;accent-color:var(--rd-accent);margin:0}
+@media (max-width:420px){.rd-count{font-size:6rem}}
+</style>
+
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AquaVibes</h1>
+    <p class="sub">Bank ide dan teleprompter buat konten molly dan louhan.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Menu">
+    <button class="tab" role="tab" id="tabIde" aria-selected="true" aria-controls="paneIde">Ide</button>
+    <button class="tab" role="tab" id="tabNaskah" aria-selected="false" aria-controls="paneNaskah">Naskah</button>
+  </div>
+
+  <section class="pane" id="paneIde" role="tabpanel" aria-labelledby="tabIde">
+    <div class="pick" id="pick" aria-live="polite">
+      <span class="label">Bingung mau ngomong apa?</span>
+      <div class="row"><span class="chip" id="pkChip"></span></div>
+      <h2 class="ttl" id="pkTitle"></h2>
+      <p class="hook" id="pkHook"></p>
+      <div class="row">
+        <button class="btn" id="pkUse">Pakai naskah ini</button>
+        <button class="btn ghost" id="pkNext">Acak lagi</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="label">Semua ide <span id="ideaTotal"></span></span>
+      <div class="filters" id="filters" role="group" aria-label="Filter ide">
+        <button class="fchip" data-f="semua" aria-pressed="true">Semua</button>
+        <button class="fchip" data-f="molly" aria-pressed="false">Molly</button>
+        <button class="fchip" data-f="louhan" aria-pressed="false">Louhan</button>
+        <button class="fchip" data-f="umum" aria-pressed="false">Umum</button>
+      </div>
+    </div>
+
+    <ul class="ideas" id="ideaList"></ul>
+
+    <div class="formula">
+      <h2>Rumus naskah 40 detik</h2>
+      <div class="bar" aria-hidden="true">
+        <i style="flex:3;background:var(--louhan)"></i>
+        <i style="flex:7;background:var(--molly)"></i>
+        <i style="flex:25;background:var(--accent)"></i>
+        <i style="flex:5;background:var(--muted)"></i>
+      </div>
+      <ol class="legend">
+        <li><b>Hook, 3 dtk.</b> Satu kalimat yang bikin orang berhenti scroll.</li>
+        <li><b>Masalah, 7 dtk.</b> Kenapa topik ini penting buat penonton.</li>
+        <li><b>Isi, 25 dtk.</b> Tiga poin singkat atau satu cerita.</li>
+        <li><b>Ajakan, 5 dtk.</b> Minta komentar atau follow.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pane" id="paneNaskah" role="tabpanel" aria-labelledby="tabNaskah" hidden>
+    <div class="field">
+      <div class="edhead">
+        <label class="label" for="edTitle">Judul naskah</label>
+        <span class="count" id="count"></span>
+      </div>
+      <input class="input" id="edTitle" type="text" maxlength="80" placeholder="Contoh: Molly beranak">
+    </div>
+    <div class="field">
+      <label class="label" for="edText">Isi naskah</label>
+      <textarea class="input" id="edText" placeholder="Tulis naskah di sini. Pisahkan paragraf dengan baris kosong."></textarea>
+      <p class="hint">Teks dalam kurung siku, misalnya [tunjuk ikan], tampil sebagai catatan kecil berwarna di layar baca.</p>
+    </div>
+    <div class="row">
+      <button class="btn" id="btnRead">Baca sekarang</button>
+      <button class="btn ghost" id="btnSave">Simpan</button>
+      <button class="btn ghost" id="btnNew">Naskah baru</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+
+    <div class="field">
+      <h2>Naskah tersimpan</h2>
+      <ul class="saved" id="savedList"></ul>
+      <p class="empty" id="savedEmpty">Belum ada naskah tersimpan. Tekan Simpan setelah selesai menulis.</p>
+    </div>
+  </section>
+</div>
+
+<div class="reader" id="reader" role="dialog" aria-label="Layar baca" hidden>
+  <div class="rd-top">
+    <span class="t" id="rdTitle"></span>
+    <button class="rd-close" id="rdClose">Tutup</button>
+  </div>
+  <div class="rd-wrap">
+    <div class="rd-band" aria-hidden="true"></div>
+    <div class="rd-scroll" id="rdScroll">
+      <div id="rdPadTop"></div>
+      <div class="rd-text" id="rdText"></div>
+      <div id="rdPadBot"></div>
+    </div>
+    <div class="rd-count" id="rdCount" role="status" aria-live="assertive" hidden></div>
+  </div>
+  <div class="rd-ctl">
+    <div class="rd-prog" aria-hidden="true"><div id="rdProg"></div></div>
+    <div class="rd-row">
+      <button class="rd-play" id="rdPlay">Mulai</button>
+      <label for="speed">Kecepatan <output id="spOut"></output>
+        <input type="range" id="speed" min="1" max="10" step="1">
+      </label>
+    </div>
+    <div class="rd-row">
+      <label for="size">Huruf <output id="szOut"></output>
+        <input type="range" id="size" min="24" max="72" step="2">
+      </label>
+      <label class="chk" for="mirror"><input type="checkbox" id="mirror"> Cermin</label>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var IDEAS = [
+    {id:"m1", sp:"molly", t:"Molly nggak bertelur, dia melahirkan",
+     hook:"Kalian tau nggak, ikan ini nggak bertelur? Dia langsung melahirkan anak yang udah bisa berenang.",
+     body:["[tunjuk perut molly yang bunting]\nNamanya molly, termasuk ikan livebearer. Anaknya berkembang di dalam perut induk, bukan di telur yang ditaruh di air.",
+           "Tanda induk mau beranak: perutnya makin bulat dan ada bercak gelap di dekat sirip dubur. Biasanya bunting sekitar 4 sampai 6 minggu, tergantung suhu air.",
+           "Tips dari gue: kasih banyak tanaman rimbun atau pisahin induknya ke kotak beranak, soalnya anakan bisa dimakan sama induk dan ikan lain.",
+           "Mau gue bahas cara ngurus anakan molly? Komen ya."]},
+    {id:"m2", sp:"molly", t:"5 jenis molly paling populer",
+     hook:"Kalian suka molly yang mana? Ini lima jenis yang paling sering gue temuin.",
+     body:["[tunjuk satu per satu]\nSatu, black molly, hitam pekat. Dua, dalmatian molly, hitam putih berbintik kayak anjing dalmatian.",
+           "Tiga, balloon molly, badannya bulat membal. Empat, sailfin molly, sirip punggungnya lebar kayak layar. Lima, gold dust atau molly emas.",
+           "Semuanya perawatannya mirip kok, jadi gampang buat dikoleksi.",
+           "Menurut kalian yang mana paling cakep? Komen nomornya."]},
+    {id:"m3", sp:"molly", t:"4 kesalahan pemula pelihara molly",
+     hook:"Molly sering dibilang ikan gampang, tapi banyak pemula yang gagal gara-gara empat hal ini.",
+     body:["Pertama, jumlah jantan kebanyakan. Jantan molly agresif kawin, jadi betina bisa stres. Idealnya satu jantan buat dua sampai tiga betina.",
+           "Kedua, air terlalu asam atau lunak. Molly lebih cocok di air yang agak keras dan cenderung basa. Banyak hobiis nambahin garam akuarium dosis kecil, tapi bukan garam dapur ya.",
+           "Ketiga, kebanyakan kasih pakan. Keempat, langsung masukin ikan ke akuarium baru yang belum siap.",
+           "Kalian pernah salah yang mana? Jujur aja di komen."]},
+    {id:"m4", sp:"molly", t:"Cara bedain molly jantan dan betina",
+     hook:"Gimana cara bedain molly jantan sama betina? Lihat satu bagian ini aja.",
+     body:["[arahkan kamera ke sirip bawah]\nLihat sirip di dekat ekor bagian bawah. Kalau bentuknya runcing kayak batang, itu jantan. Sirip itu namanya gonopodium.",
+           "Kalau bentuknya melebar kayak kipas kecil, itu betina. Betina juga biasanya badannya lebih bulat dan lebih besar.",
+           "Jadi sebelum beli, cek dulu biar rasio jantan dan betinanya pas."]},
+    {id:"m5", sp:"molly", t:"Molly doyan makan lumut",
+     hook:"Akuarium kalian berlumut? Molly bisa jadi tukang bersih-bersihnya.",
+     body:["Molly suka makan alga yang nempel di kaca dan dekorasi. Tapi jangan dijadiin satu-satunya makanan ya.",
+           "Kasih juga pelet atau serpihan yang ada spirulinanya, dan sesekali sayuran yang direbus sebentar, misalnya zucchini atau timun. Cacing darah beku juga boleh sesekali buat protein tambahan.",
+           "Kasih secukupnya aja. Kalau sisa makanan ngendap, air jadi cepet kotor."]},
+    {id:"m6", sp:"molly", t:"Molly dan garam, perlu nggak?",
+     hook:"Banyak yang bilang molly wajib dikasih garam. Bener nggak sih?",
+     body:["Molly memang lebih tahan di air yang agak payau, dan beberapa jenis bahkan hidup di air payau di alam. Tapi bukan berarti wajib.",
+           "Kalau air kalian tawar dan lunak, banyak hobiis nambahin garam akuarium dosis kecil, pelan-pelan, dan ikut petunjuk di kemasan. Jangan pakai garam dapur beryodium.",
+           "Yang lebih penting dari garam: air bersih, suhu stabil sekitar 24 sampai 28 derajat, dan akuarium nggak kepadatan."]},
+
+    {id:"l1", sp:"louhan", t:"Apa sih ikan louhan itu?",
+     hook:"Louhan itu sebenarnya bukan ikan yang ada di alam, lho.",
+     body:["[tunjuk louhan]\nLouhan atau flowerhorn itu ikan hibrida hasil persilangan beberapa jenis cichlid. Banyak yang bilang awalnya dikembangin di Asia Tenggara sekitar akhir tahun sembilan puluhan.",
+           "Ciri khasnya ada benjolan di kepala yang disebut jenong, warnanya cerah, dan karakternya galak tapi pintar.",
+           "Makanya banyak yang suka: ikannya punya kepribadian.",
+           "Kalian tim ikan kalem atau ikan galak? Komen."]},
+    {id:"l2", sp:"louhan", t:"Jenong louhan, bisa dibesarin nggak?",
+     hook:"Semua orang pengen jenong louhan gede. Tapi bisa nggak sih dibesarin?",
+     body:["Jenong itu sebagian besar ditentukan genetik indukannya. Usia juga ngaruh, biasanya makin dewasa makin kelihatan.",
+           "Pakan bagus dan air bersih bantu ikan tumbuh sehat, tapi nggak ada pakan ajaib yang bikin jenong gede instan. Hati-hati sama klaim yang berlebihan.",
+           "Pas beli, perhatiin indukannya, bukan cuma ikannya."]},
+    {id:"l3", sp:"louhan", t:"Akuarium louhan minimal segede apa?",
+     hook:"Banyak yang beli louhan, terus akuariumnya kekecilan. Jangan sampai gitu.",
+     body:["Louhan dewasa bisa sekitar 30 senti atau lebih. Dia butuh ruang buat muter badan dan renang.",
+           "Buat satu ekor dewasa, banyak hobiis pakai akuarium panjang sekitar satu meter atau lebih. Makin lega makin baik.",
+           "Pakai filter yang kuat, karena louhan makannya banyak dan kotorannya juga banyak. Ganti air rutin.",
+           "Kalau mau pelihara, siapin tempat dulu, baru beli ikannya."]},
+    {id:"l4", sp:"louhan", t:"Kenapa louhan harus sendirian",
+     hook:"Jangan pernah campur louhan sama ikan lain kalau kalian nggak mau nyesel.",
+     body:["Louhan itu teritorial dan agresif, terutama sama ikan yang mirip ukurannya atau sesama louhan. Bisa berantem sampai luka parah.",
+           "[tunjuk akuarium dengan dekorasi simpel]\nMakanya kebanyakan hobiis pelihara satu ekor per akuarium. Dekorasinya juga dibikin simpel karena louhan suka bongkar-bongkar.",
+           "Ada yang pernah nyoba campur? Ceritain hasilnya."]},
+    {id:"l5", sp:"louhan", t:"Pakan louhan yang bener",
+     hook:"Louhan kalian makannya apa? Ini yang gue kasih.",
+     body:["Dasarnya pelet khusus cichlid atau louhan yang proteinnya tinggi. Ada juga yang formulanya buat bantu warna.",
+           "Sesekali boleh kasih udang atau jangkrik buat variasi. Hindari pakan hidup dari sumber nggak jelas karena bisa bawa penyakit.",
+           "Kasih secukupnya, kira-kira habis dalam dua menit. Louhan itu rakus, jadi kebanyakan makan gampang bikin air kotor dan ikan sakit."]},
+    {id:"l6", sp:"louhan", t:"6 jenis louhan yang terkenal",
+     hook:"Lihat nama-nama ini, kalian udah kenal berapa?",
+     body:["[tampilkan foto atau ikannya]\nKamfa, Zhen Zhu atau pearl, Golden Base, Red Dragon, Thai Silk, sama King Kamfa.",
+           "Masing-masing punya ciri warna dan pola yang beda. Gue bakal bahas satu-satu di video berikutnya.",
+           "Kalian paling penasaran sama yang mana? Komen namanya."]},
+    {id:"l7", sp:"louhan", t:"Louhan mogok makan, kenapa?",
+     hook:"Louhan kalian tiba-tiba nggak mau makan? Cek tiga hal ini dulu.",
+     body:["Pertama, suhu air. Louhan biasanya nyaman di sekitar 26 sampai 30 derajat. Terlalu dingin bikin nafsu makannya turun.",
+           "Kedua, kualitas air. Kalau air kotor atau amonia naik, ikan stres. Coba ganti sebagian air.",
+           "Ketiga, perubahan lingkungan, misalnya baru pindah akuarium atau dekorasi diubah. Kasih waktu beberapa hari.",
+           "Kalau masih nggak makan setelah beberapa hari, atau ada luka, tanya ke yang berpengalaman atau dokter hewan ikan."]},
+    {id:"l8", sp:"louhan", t:"Louhan pembawa hoki, mitos atau fakta?",
+     hook:"Katanya louhan bawa hoki. Gue jelasin dari dua sisi.",
+     body:["Di sebagian budaya, terutama yang percaya feng shui, louhan dianggap membawa keberuntungan. Bentuk jenongnya sering dihubungkan sama kemakmuran.",
+           "Tapi secara ilmiah nggak ada bukti ikan bisa ngubah rezeki. Yang pasti, ngerawat makhluk hidup itu ngelatih tanggung jawab dan kesabaran.",
+           "Kalian percaya yang mana? Tulis di komen."]},
+
+    {id:"u1", sp:"umum", t:"Molly lawan louhan, pilih mana?",
+     hook:"Mau mulai hobi ikan hias? Molly atau louhan, mana yang cocok buat kalian?",
+     body:["Molly: murah, bisa dipelihara berkelompok, dan gampang beranak. Cocok buat pemula yang pengen akuarium rame.",
+           "Louhan: lebih mahal, butuh akuarium besar, dipelihara sendirian, tapi karakternya kuat dan interaktif.",
+           "Kalau pengen santai dan banyak ikan, ambil molly. Kalau pengen satu ikan yang punya kepribadian, ambil louhan.",
+           "Pilihan kalian apa?"]},
+    {id:"u2", sp:"umum", t:"5 langkah setup akuarium pertama",
+     hook:"Mau pasang akuarium pertama? Jangan langsung masukin ikan.",
+     body:["Satu, siapin akuarium, filter, dan pemanas kalau perlu. Dua, isi air dan netralin kaporit pakai penetral air.",
+           "Tiga, jalanin filter beberapa minggu supaya bakteri baik tumbuh. Itu namanya siklus nitrogen atau cycling.",
+           "Empat, tes air. Lima, baru masukin ikan sedikit-sedikit.",
+           "Sabar di awal bikin ikan awet. Mau gue bahas cycling lebih detail?"]},
+    {id:"u3", sp:"umum", t:"Ganti air mingguan yang bener",
+     hook:"Ganti air itu gampang, tapi banyak yang salah caranya.",
+     body:["Ganti sebagian aja, sekitar seperempat sampai sepertiga air, jangan dikuras semua.",
+           "Pakai air yang sudah dinetralin dan suhunya mirip dengan air akuarium. Sedot kotoran di dasar pas ganti air.",
+           "Rutin tiap minggu lebih baik daripada jarang tapi banyak."]},
+    {id:"u4", sp:"umum", t:"Sehari ngurus ikan hias",
+     hook:"Sehari-hari ngurus molly dan louhan itu ngapain aja? Gue tunjukin.",
+     body:["[rekam rutinitas pagi]\nPagi, cek ikan dan kasih makan secukupnya. Lihat apakah ada yang lesu atau luka.",
+           "Sore, cek suhu dan filter. Seminggu sekali, ganti sebagian air dan bersihin kaca.",
+           "Ternyata nggak ribet. Yang penting konsisten."]},
+    {id:"u5", sp:"umum", t:"Jawab komentar kalian",
+     hook:"Banyak yang nanya di komen, hari ini gue jawab tiga yang paling sering.",
+     body:["[tampilkan komentar di layar]\nPertanyaan pertama: [isi pertanyaan 1]. Jawabannya: [jawaban singkat].",
+           "Pertanyaan kedua: [isi pertanyaan 2]. Jawabannya: [jawaban singkat].",
+           "Pertanyaan ketiga: [isi pertanyaan 3]. Jawabannya: [jawaban singkat].",
+           "Mau ditanyain apa lagi? Tulis di komen biar gue bahas di video berikutnya."]},
+    {id:"u6", sp:"umum", t:"Ikan baru datang, ini yang gue lakuin",
+     hook:"Ikan baru datang jangan langsung dicemplungin.",
+     body:["Apungin kantongnya di akuarium sekitar lima belas sampai tiga puluh menit supaya suhunya samaan.",
+           "Lalu tambahin sedikit air akuarium ke kantong beberapa kali supaya ikan adaptasi.",
+           "Masukin ikannya pelan-pelan, dan jangan tuang air kantongnya ke akuarium. Matiin lampu dulu biar ikan nggak kaget."]}
+  ];
+  var SP = {molly:"Molly", louhan:"Louhan", umum:"Umum"};
+
+  function $(id){return document.getElementById(id)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  var store = {
+    get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+    set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  };
+  function fullText(i){return i.hook+"\n\n"+i.body.join("\n\n")}
+  function words(t){var s=t.replace(/\[[^\]]*\]/g," ").trim();return s?s.split(/\s+/).length:0}
+  function secs(w){return Math.round(w/2.6)}
+
+  var saved = store.get("ngomongikan.saved",[]);
+  var settings = Object.assign({speed:5,size:40,mirror:false}, store.get("ngomongikan.set",{}));
+  var filter = "semua", lastPick = -1;
+  var current = store.get("ngomongikan.draft",null);
+  var hadDraft = !!(current && typeof current.text==="string" && current.text.trim());
+
+  /* ---------- Tab ---------- */
+  function showTab(name){
+    var ide = name==="ide";
+    $("paneIde").hidden = !ide; $("paneNaskah").hidden = ide;
+    $("tabIde").setAttribute("aria-selected", ide?"true":"false");
+    $("tabNaskah").setAttribute("aria-selected", ide?"false":"true");
+  }
+  $("tabIde").addEventListener("click",function(){showTab("ide")});
+  $("tabNaskah").addEventListener("click",function(){showTab("naskah")});
+
+  /* ---------- Ide ---------- */
+  function renderIdeas(){
+    var list = IDEAS.filter(function(i){return filter==="semua"||i.sp===filter});
+    $("ideaTotal").textContent = "(" + list.length + ")";
+    $("ideaList").innerHTML = list.map(function(i){
+      return '<li><details><summary><span class="it-top"><span class="chip sp-'+i.sp+'">'+SP[i.sp]+'</span><span class="it-title">'+esc(i.t)+'</span></span>'+
+        '<p class="it-hook">'+esc(i.hook)+'</p></summary>'+
+        '<div class="it-body"><pre class="script">'+esc(fullText(i))+'</pre>'+
+        '<div class="row"><button class="btn sm" data-use="'+i.id+'">Pakai naskah ini</button><span class="count">'+words(fullText(i))+' kata, sekitar '+secs(words(fullText(i)))+' dtk</span></div></div></details></li>';
+    }).join("");
+  }
+  function byId(id){for(var k=0;k<IDEAS.length;k++){if(IDEAS[k].id===id)return IDEAS[k]}return null}
+  function pickRandom(){
+    var n;
+    do{n=Math.floor(Math.random()*IDEAS.length)}while(n===lastPick && IDEAS.length>1);
+    lastPick = n;
+    var i = IDEAS[n];
+    $("pkChip").className = "chip sp-"+i.sp; $("pkChip").textContent = SP[i.sp];
+    $("pkTitle").textContent = i.t; $("pkHook").textContent = i.hook;
+    $("pkUse").setAttribute("data-use", i.id);
+  }
+  $("pkNext").addEventListener("click",pickRandom);
+  $("pkUse").addEventListener("click",function(){useIdea($("pkUse").getAttribute("data-use"))});
+  $("ideaList").addEventListener("click",function(e){
+    var b = e.target.closest("[data-use]"); if(b) useIdea(b.getAttribute("data-use"));
+  });
+  $("filters").addEventListener("click",function(e){
+    var b = e.target.closest("[data-f]"); if(!b) return;
+    filter = b.getAttribute("data-f");
+    Array.prototype.forEach.call($("filters").children,function(c){c.setAttribute("aria-pressed", c===b?"true":"false")});
+    renderIdeas();
+  });
+
+  function useIdea(id){
+    var i = byId(id); if(!i) return;
+    if(current && current.dirty && current.text.trim() && !current.id){ saveCurrent(true) }
+    current = {id:null, title:i.t, text:fullText(i), dirty:false};
+    fillEditor(); persistDraft(); showTab("naskah"); window.scrollTo(0,0);
+    flash("Naskah dimuat. Edit sesukamu, lalu tekan Baca sekarang.");
+  }
+
+  /* ---------- Editor ---------- */
+  var statusTimer = 0;
+  function flash(msg){
+    $("status").textContent = msg; clearTimeout(statusTimer);
+    statusTimer = setTimeout(function(){$("status").textContent=""},3500);
+  }
+  function updateCount(){
+    var w = words($("edText").value);
+    $("count").textContent = w ? (w+" kata, sekitar "+secs(w)+" dtk") : "Belum ada isi";
+  }
+  function fillEditor(){
+    $("edTitle").value = current.title; $("edText").value = current.text; updateCount();
+  }
+  function persistDraft(){ store.set("ngomongikan.draft", current) }
+  function onEdit(){
+    current.title = $("edTitle").value; current.text = $("edText").value; current.dirty = true;
+    updateCount(); persistDraft();
+  }
+  $("edTitle").addEventListener("input",onEdit);
+  $("edText").addEventListener("input",onEdit);
+
+  function saveCurrent(auto){
+    var text = $("edText").value, title = ($("edTitle").value.trim() || "Naskah tanpa judul");
+    if(!text.trim()){ flash("Isi naskah dulu sebelum disimpan."); return }
+    if(auto && current.dirty){ title = title + " (draf)" }
+    var now = Date.now();
+    if(current.id){
+      for(var k=0;k<saved.length;k++){ if(saved[k].id===current.id){ saved[k].title=title; saved[k].text=text; saved[k].ts=now } }
+    }else{
+      current.id = now.toString(36); saved.unshift({id:current.id,title:title,text:text,ts:now});
+    }
+    current.dirty = false; current.title = title.replace(/ \(draf\)$/,"");
+    store.set("ngomongikan.saved", saved); persistDraft(); renderSaved();
+    if(!auto) flash("Tersimpan.");
+  }
+  $("btnSave").addEventListener("click",function(){ saveCurrent(false) });
+  $("btnNew").addEventListener("click",function(){
+    if(current && current.dirty && current.text.trim() && !current.id){ saveCurrent(true) }
+    current = {id:null,title:"",text:"",dirty:false}; fillEditor(); persistDraft();
+    $("edTitle").focus();
+  });
+
+  function renderSaved(){
+    $("savedEmpty").hidden = saved.length>0;
+    $("tabNaskah").textContent = saved.length ? "Naskah ("+saved.length+")" : "Naskah";
+    $("savedList").innerHTML = saved.map(function(s){
+      var w = words(s.text);
+      return '<li><div class="sv-info"><span class="sv-title">'+esc(s.title)+'</span><span class="count">'+w+' kata, sekitar '+secs(w)+' dtk</span></div>'+
+        '<div class="row"><button class="btn sm ghost" data-open="'+s.id+'">Buka</button>'+
+        '<button class="btn sm ghost" data-del="'+s.id+'">Hapus</button></div></li>';
+    }).join("");
+  }
+  $("savedList").addEventListener("click",function(e){
+    var o = e.target.closest("[data-open]"), d = e.target.closest("[data-del]");
+    if(o){
+      var id = o.getAttribute("data-open");
+      for(var k=0;k<saved.length;k++){ if(saved[k].id===id){
+        if(current && current.dirty && current.text.trim() && !current.id){ saveCurrent(true) }
+        current = {id:saved[k].id,title:saved[k].title,text:saved[k].text,dirty:false};
+        fillEditor(); persistDraft(); window.scrollTo(0,0); flash("Naskah dibuka.");
+      } }
+    }
+    if(d){
+      if(d.getAttribute("data-armed")!=="1"){
+        d.setAttribute("data-armed","1"); d.textContent = "Yakin hapus?"; d.classList.remove("ghost"); d.classList.add("warn");
+        setTimeout(function(){ if(d.isConnected){ d.setAttribute("data-armed","0"); d.textContent="Hapus"; d.classList.remove("warn"); d.classList.add("ghost") } },3000);
+      }else{
+        var did = d.getAttribute("data-del");
+        saved = saved.filter(function(s){return s.id!==did});
+        if(current && current.id===did){ current.id = null }
+        store.set("ngomongikan.saved", saved); persistDraft(); renderSaved(); flash("Naskah dihapus.");
+      }
+    }
+  });
+
+  /* ---------- Layar baca ---------- */
+  var rd = $("reader"), sc = $("rdScroll"), box = $("rdText");
+  var raf = 0, playing = false, pos = 0, lastT = 0, lastSet = 0, ended = false, cdTimer = 0, wl = null;
+
+  function lh(){return settings.size*1.45}
+  function pxs(){return lh()*settings.speed*0.14}
+  function maxScroll(){return Math.max(0, sc.scrollHeight - sc.clientHeight)}
+  function layout(){
+    var h = sc.clientHeight;
+    $("rdPadTop").style.height = (h*0.4)+"px"; $("rdPadBot").style.height = (h*0.6)+"px";
+    rd.style.setProperty("--fs", settings.size+"px"); rd.style.setProperty("--lh", lh()+"px");
+    box.classList.toggle("mirror", !!settings.mirror);
+  }
+  function progress(){
+    var m = maxScroll(); $("rdProg").style.width = (m>0 ? Math.min(100, sc.scrollTop/m*100) : 0)+"%";
+  }
+  function buildText(txt){
+    box.textContent = "";
+    txt.trim().split(/\n{2,}/).forEach(function(par){
+      if(!par.trim()) return;
+      var p = document.createElement("p");
+      par.trim().split(/(\[[^\]]+\])/).forEach(function(seg){
+        if(!seg) return;
+        if(/^\[[^\]]+\]$/.test(seg)){ var s = document.createElement("span"); s.className="cue"; s.textContent=seg; p.appendChild(s) }
+        else p.appendChild(document.createTextNode(seg));
+      });
+      box.appendChild(p);
+    });
+  }
+  function setPlayLabel(t){$("rdPlay").textContent = t}
+  function tick(t){
+    if(!playing) return;
+    if(Math.abs(sc.scrollTop - lastSet) > 2) pos = sc.scrollTop;
+    var dt = Math.min(0.05, (t-lastT)/1000); lastT = t;
+    var m = maxScroll();
+    pos = Math.min(m, pos + pxs()*dt);
+    sc.scrollTop = pos; lastSet = sc.scrollTop;
+    progress();
+    if(pos >= m-1){ finish(); return }
+    raf = requestAnimationFrame(tick);
+  }
+  function startPlay(){
+    playing = true; ended = false; pos = sc.scrollTop; lastSet = sc.scrollTop; lastT = performance.now();
+    setPlayLabel("Jeda"); raf = requestAnimationFrame(tick);
+  }
+  function pause(){ playing = false; cancelAnimationFrame(raf); setPlayLabel("Lanjut") }
+  function finish(){ playing = false; ended = true; cancelAnimationFrame(raf); progress(); setPlayLabel("Ulang") }
+  function cancelCountdown(){ clearInterval(cdTimer); cdTimer = 0; $("rdCount").hidden = true; setPlayLabel(pos<4 ? "Mulai" : "Lanjut") }
+  function countdown(done){
+    var n = 3; $("rdCount").textContent = n; $("rdCount").hidden = false; setPlayLabel("Batal");
+    cdTimer = setInterval(function(){
+      n--;
+      if(n<=0){ clearInterval(cdTimer); cdTimer = 0; $("rdCount").hidden = true; done() }
+      else $("rdCount").textContent = n;
+    },1000);
+  }
+  function toggle(){
+    if(cdTimer){ cancelCountdown(); return }
+    if(playing){ pause(); return }
+    if(ended){ sc.scrollTop = 0; pos = 0; ended = false }
+    if(sc.scrollTop < 4){ countdown(startPlay) } else startPlay();
+  }
+  sc.addEventListener("scroll",function(){ if(!playing){ pos = sc.scrollTop; lastSet = sc.scrollTop; progress() } });
+  sc.addEventListener("click",toggle);
+  $("rdPlay").addEventListener("click",toggle);
+
+  function lockScreen(){ try{ navigator.wakeLock.request("screen").then(function(l){wl=l}).catch(function(){}) }catch(e){} }
+  function unlockScreen(){ try{ if(wl) wl.release() }catch(e){} wl = null }
+  document.addEventListener("visibilitychange",function(){ if(!rd.hidden && document.visibilityState==="visible") lockScreen() });
+
+  function onKey(e){
+    if(e.key==="Escape"){ closeReader() }
+    else if(e.key===" " && e.target.tagName!=="INPUT"){ e.preventDefault(); toggle() }
+  }
+  function openReader(){
+    var text = $("edText").value;
+    if(!text.trim()){ flash("Isi naskah dulu sebelum dibaca."); return }
+    $("rdTitle").textContent = $("edTitle").value.trim() || "Naskah";
+    buildText(text);
+    rd.hidden = false; document.body.style.overflow = "hidden";
+    $("speed").value = settings.speed; $("size").value = settings.size; $("mirror").checked = !!settings.mirror;
+    $("spOut").textContent = settings.speed; $("szOut").textContent = settings.size;
+    layout(); sc.scrollTop = 0; pos = 0; lastSet = 0; ended = false; playing = false; setPlayLabel("Mulai"); progress();
+    lockScreen(); document.addEventListener("keydown",onKey);
+    $("rdPlay").focus();
+  }
+  function closeReader(){
+    playing = false; cancelAnimationFrame(raf); if(cdTimer){ clearInterval(cdTimer); cdTimer = 0 }
+    $("rdCount").hidden = true; rd.hidden = true; document.body.style.overflow = "";
+    unlockScreen(); document.removeEventListener("keydown",onKey);
+  }
+  $("btnRead").addEventListener("click",openReader);
+  $("rdClose").addEventListener("click",closeReader);
+
+  function saveSettings(){ store.set("ngomongikan.set", settings) }
+  $("speed").addEventListener("input",function(){
+    settings.speed = +this.value; $("spOut").textContent = settings.speed; saveSettings();
+  });
+  $("size").addEventListener("input",function(){
+    var m = maxScroll(), ratio = m>0 ? sc.scrollTop/m : 0;
+    settings.size = +this.value; $("szOut").textContent = settings.size; saveSettings();
+    layout(); var nm = maxScroll(); sc.scrollTop = ratio*nm; pos = sc.scrollTop; lastSet = sc.scrollTop; progress();
+  });
+  $("mirror").addEventListener("change",function(){ settings.mirror = this.checked; saveSettings(); layout() });
+  window.addEventListener("resize",function(){ if(!rd.hidden) layout() });
+
+  /* ---------- Mulai ---------- */
+  renderIdeas(); renderSaved(); pickRandom();
+  if(!current || typeof current.text!=="string"){
+    var first = IDEAS[Math.floor(Math.random()*IDEAS.length)];
+    current = {id:null,title:first.t,text:fullText(first),dirty:false};
+  }
+  fillEditor();
+  if(hadDraft) openReader();
+})();
+</script>
+
+</body>
+</html>
